@@ -30,6 +30,7 @@
             android:clipChildren="false">
 
             <RelativeLayout
+                android:visibility="gone"
                 android:id="@+id/button_container"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -81,9 +82,8 @@
             <com.yuyakaido.android.cardstackview.CardStackView
                 android:id="@+id/card_stack_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="256dp"
                 android:layout_margin="6dp"
-                android:layout_above="@+id/button_container"
                 android:padding="4dp"
                 android:clipToPadding="false">
             </com.yuyakaido.android.cardstackview.CardStackView>
