@@ -137,13 +137,13 @@ class MainActivity : AppCompatActivity(), CardStackListener {
     }
 
     private fun initialize() {
-        manager.setStackFrom(StackFrom.None)
-        manager.setVisibleCount(3)
+        manager.setStackFrom(StackFrom.Top)
+        manager.setVisibleCount(4)
         manager.setTranslationInterval(8.0f)
-        manager.setScaleInterval(0.95f)
+        manager.setScaleInterval(0.90f)
         manager.setSwipeThreshold(0.3f)
         manager.setMaxDegree(20.0f)
-        manager.setDirections(Direction.HORIZONTAL)
+        manager.setDirections(Direction.FREEDOM)
         manager.setCanScrollHorizontal(true)
         manager.setCanScrollVertical(true)
         manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual)
