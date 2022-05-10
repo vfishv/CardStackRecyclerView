@@ -21,6 +21,7 @@
         app:riv_corner_radius="8dp"/>
 
     <LinearLayout
+        android:visibility="gone"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
