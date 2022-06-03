@@ -265,7 +265,18 @@ public class CardStackLayoutManager
             // 4. Aをスワイプする
             // 5. カードを1枚だけ画面に表示する（このカードをBとする）
             // 6. ページング完了後はBが表示されるはずが、Aが画面に表示される
-            removeAndRecycleView(getTopView(), recycler);
+            View topView = getTopView();
+            if (topView != null) {
+                removeAndRecycleView(topView, recycler);
+            }
+            /*
+Crash:
+06-03 23:35:59.957 17591 17591 E AndroidRuntime: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean androidx.recyclerview.widget.RecyclerView$ViewHolder.isTmpDetached()' on a null object reference
+06-03 23:35:59.957 17591 17591 E AndroidRuntime: 	at androidx.recyclerview.widget.RecyclerView$Recycler.recycleView(RecyclerView.java:6542)
+06-03 23:35:59.957 17591 17591 E AndroidRuntime: 	at androidx.recyclerview.widget.RecyclerView$LayoutManager.removeAndRecycleView(RecyclerView.java:9200)
+06-03 23:35:59.957 17591 17591 E AndroidRuntime: 	at com.yuyakaido.android.cardstackview.CardStackLayoutManager.update(CardStackLayoutManager.java:268)
+06-03 23:35:59.957 17591 17591 E AndroidRuntime: 	at com.yuyakaido.android.cardstackview.CardStackLayoutManager.onLayoutChildren(CardStackLayoutManager.java:51)
+             */
 
             final Direction direction = state.getDirection();
 
